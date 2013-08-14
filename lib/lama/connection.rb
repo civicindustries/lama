@@ -11,7 +11,9 @@ module LAMA
           'User-Agent' => user_agent
         },
         :ssl => {:verify => false},
-        :url => endpoint
+        :url => endpoint,
+        :timeout => 50,
+        :open_timeout => 50
       })
 
       Faraday.new(merged_options) do |builder|
